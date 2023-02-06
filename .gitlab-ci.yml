@@ -1,0 +1,33 @@
+stages:
+    - build
+    - tests
+    - release
+    - deploy
+
+build libs:
+    stage: build
+    script:
+        - echo “building 1”
+           
+
+unit:
+    stage: tests   
+    script: 
+        - echo "unit testing"
+
+release:
+    stage: release
+    except:
+        - feature  
+    script: 
+        - echo "release"
+         
+
+deploy:
+    stage: deploy
+    except:
+        - feature  
+    script: 
+        - echo "deploy"
+                       
+    
